@@ -1,0 +1,110 @@
+# =======================================================================================
+# GITIGNORE UNIFICADO PARA UNREAL ENGINE, C++ E PYTHON
+#
+# DESCRIÇÃO:
+# Ignora todos os arquivos gerados localmente, caches, logs, binários de
+# compilação e configurações de IDE para manter o repositório limpo e focado
+# apenas nos arquivos-fonte essenciais.
+# =======================================================================================
+
+# ---------------------------------------------------------------------------------------
+# Unreal Engine
+# Pastas e arquivos gerados pelo motor e pelo editor.
+# ---------------------------------------------------------------------------------------
+/Build/
+/DerivedDataCache/
+/Intermediate/
+/Saved/
+/Binaries/
+*.VC.db
+*.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ---------------------------------------------------------------------------------------
+# C++ (Ferramentas, Bibliotecas Externas, etc.)
+# Artefatos de compilação e arquivos de projeto específicos do usuário.
+# ---------------------------------------------------------------------------------------
+# Pastas de build comuns. A barra no final garante que apenas pastas sejam ignoradas.
+build/
+bin/
+lib/
+# Arquivos de objeto e bibliotecas compiladas
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+# Arquivos de dependência gerados
+*.d
+# Arquivos de usuário de sistemas de build
+CMakeLists.txt.user
+*.cmake.user
+Makefile
+
+# ---------------------------------------------------------------------------------------
+# Python (Scripts, Automação, Ferramentas)
+# Caches, ambientes virtuais e pacotes de distribuição.
+# ---------------------------------------------------------------------------------------
+# Cache de bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+# Ambientes virtuais - NUNCA versione um venv
+/venv/
+/env/
+/.venv/
+/.env/
+# Arquivos de distribuição e instalação
+/dist/
+/build/
+*.egg-info/
+*.egg
+# Caches de ferramentas de linting e teste
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+# Notebooks Jupyter
+.ipynb_checkpoints
+
+# ---------------------------------------------------------------------------------------
+# IDEs e Editores
+# Configurações específicas do usuário para ambientes de desenvolvimento populares.
+# ---------------------------------------------------------------------------------------
+# Visual Studio / VS Code
+.vs/
+.vscode/
+# Rider / Outros da JetBrains
+.idea/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Xcode
+*.xccheckout
+*.xcscmblueprint
+/xcuserdata/
+
+# ---------------------------------------------------------------------------------------
+# Sistema Operacional e Arquivos Gerais
+# ---------------------------------------------------------------------------------------
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+# Arquivos de backup e logs
+*.log
+*.log.*
+*.bak
+*.tmp
+*.swp
