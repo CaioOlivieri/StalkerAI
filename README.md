@@ -18,7 +18,7 @@ This project is structured into a multi-week plan, focusing on developing a comp
 
 - [ ] **Week 1: Core Foundation & Prototyping**
   - [x] Establish a stable C++ project and resolve development environment issues.
-  - [ ] Create a functional level blockout using Unreal's Modeling Mode to serve as a testbed.
+  - [x] Create a functional level blockout using Unreal's Modeling Mode to serve as a testbed.
   - [ ] Implement a C++ player character with responsive controls via the Enhanced Input System.
   - [ ] Architect a reusable C++ Health Component on a basic AI target dummy.
 
