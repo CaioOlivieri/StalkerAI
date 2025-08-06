@@ -52,7 +52,7 @@ This decision was not a step back, but a crucial step *forward*. It was a delibe
 - [ ] **Week 1: Core Foundation & Prototyping**
   - [x] Establish a stable C++ project and resolve development environment issues.
   - [x] Create a functional level blockout using Unreal's Modeling Mode to serve as a testbed.
-  - [.] Implement a C++ player character and configure its basic controls (walk, jump, run) with Enhanced Input.
+  - [ ] Implement a C++ player character and configure its basic controls (walk, jump, run) with Enhanced Input.
   - [ ] Create a reusable C++ Health Component on a basic AI target dummy.
 
 - [ ] **Week 2: Weapon Systems & Combat Feedback**
