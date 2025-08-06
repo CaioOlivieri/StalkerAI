@@ -52,23 +52,30 @@ This decision was not a step back, but a crucial step *forward*. It was a delibe
 - [ ] **Week 1: Core Foundation & Prototyping**
   - [x] Establish a stable C++ project and resolve development environment issues.
   - [x] Create a functional level blockout using Unreal's Modeling Mode to serve as a testbed.
-  - [ ] Implement a C++ player character with responsive controls via the Enhanced Input System.
-  - [ ] Architect a reusable C++ Health Component on a basic AI target dummy.
+  - [..] Implement a C++ player character and configure its basic controls (walk, jump, run) with Enhanced Input.
+  - [ ] Create a reusable C++ Health Component on a basic AI target dummy.
 
 - [ ] **Week 2: Weapon Systems & Combat Feedback**
   - [ ] Implement a foundational weapon system in C++ (e.g., hitscan or projectile based).
   - [ ] Add core mechanics: shooting logic, reloading, and ammo management.
   - [ ] Integrate visual and audio feedback for combat (VFX for muzzle flash/impacts, placeholder SFX).
 
-- [ ] **Week 3: Dynamic AI Behavior**
-  - [ ] Utilize the AIModule and StateTree to create more intelligent agents.
-  * [ ] Implement foundational AI states: patrolling, player detection, and basic combat reactions (e.g., seeking cover, engaging).
+- [ ] **Week 3: Advanced Traversal Systems (Parkour)**
+  - [ ] Build the base of our ClimbableRopeActor in C++.
+  - [ ] Implement the pendulum physics for the swing.
+  - [ ] Implement a Fall Roll system to cushion falls based on landing speed and using Root Motion animation.
+  - [ ] Create a "Custom Movement Mode" in StalkerAICharacter for the "swinging" state.
+  - [ ] Logic for grabbing, gaining momentum, and releasing the rope at the correct speed.
 
-- [ ] **Week 4: Game Loop & User Interface (UI)**
-  - [ ] Develop a complete gameplay loop with clear objectives and win/loss conditions.
-  - [ ] Create a basic user interface (HUD) with C++ and UMG to display player stats (health, ammo).
-  - [ ] Implement essential systems like a main menu and pause functionality.
+- [ ] **Week 4: Dynamic AI Behavior(UI)**
+  - [ ] Implement basic AI (patrol, detection).
+  - [ ] Teach the AI how to use combat systems.
+  - [ ] (Advanced) Teach the AI how to use the rope with NavLinkProxy.
   - [ ] Polish and refine existing mechanics based on playtesting.
+
+- [ ] **Week 5: Game Loop & UI**
+  - [ ] Objectives, win/lose conditions.
+  - [ ] HUD, menus.
 
 ## Current Features
 
