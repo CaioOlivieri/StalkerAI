@@ -49,33 +49,66 @@ This decision was not a step back, but a crucial step *forward*. It was a delibe
 
 ## Development Roadmap
 
-- [ ] **Week 1: Core Foundation & Prototyping**
-  - [x] Establish a stable C++ project and resolve development environment issues.
-  - [x] Create a functional level blockout using Unreal's Modeling Mode to serve as a testbed.
-  - [ ] Implement a C++ player character and configure its basic controls (walk, jump, run) with Enhanced Input.
-  - [ ] Create a reusable C++ Health Component on a basic AI target dummy.
+### **Milestone 1: Core Systems & Player Foundation**
 
-- [ ] **Week 2: Weapon Systems & Combat Feedback**
-  - [ ] Implement a foundational weapon system in C++ (e.g., hitscan or projectile based).
-  - [ ] Add core mechanics: shooting logic, reloading, and ammo management.
-  - [ ] Integrate visual and audio feedback for combat (VFX for muzzle flash/impacts, placeholder SFX).
+* **Objective:** To establish a stable project architecture and implement a fully controllable player character.
+* **Tasks:**
+    * [x] **Project Setup:** Establish a stable C++ project, a clean development environment, and a professional version control workflow with Git & Git LFS.
+    * [x] **Arena Blockout:** Create a functional level blockout to serve as a testbed for all gameplay mechanics, with a focus on verticality and traversal opportunities.
+    * [ ] **C++ Character Architecture:** Architect and create a shared C++ base class (`SltakerAICharacter`) for all characters and a dedicated child class for the player (`StalkerAIPlayerCharacter`).
+    * [ ] **Player Controller Implementation:**
+        * Implement camera controls (Spring Arm and Camera components) in the player's C++ class.
+        * Configure basic locomotion (movement, running, jumping) via the **Enhanced Input System**.
+    * [ ] **Animation Integration (Locomotion):** Create a foundational **Animation Blueprint** and **State Machine** to drive the basic locomotion animations (Idle, Walk, Run, Jump) based on data from the C++ character.
+    * [ ] **Health & Damage System:** Develop a reusable C++ `HealthComponent` and attach it to the base character class.
 
-- [ ] **Week 3: Advanced Traversal Systems (Parkour)**
-  - [ ] Build the base of our ClimbableRopeActor in C++.
-  - [ ] Implement the pendulum physics for the swing.
-  - [ ] Implement a Fall Roll system to cushion falls based on landing speed and using Root Motion animation.
-  - [ ] Create a "Custom Movement Mode" in StalkerAICharacter for the "swinging" state.
-  - [ ] Logic for grabbing, gaining momentum, and releasing the rope at the correct speed.
+### **Milestone 2: Combat Mechanics Prototype**
 
-- [ ] **Week 4: Dynamic AI Behavior(UI)**
-  - [ ] Implement basic AI (patrol, detection).
-  - [ ] Teach the AI how to use combat systems.
-  - [ ] (Advanced) Teach the AI how to use the rope with NavLinkProxy.
-  - [ ] Polish and refine existing mechanics based on playtesting.
+* **Objective:** To implement a functional combat loop, allowing for interaction between characters through damage.
+* **Tasks:**
+    * [ ] **Weapon System:** Implement a foundational C++ weapon system (hitscan or projectile based).
+    * [ ] **Core Combat Loop:** Add logic for shooting, reloading, and ammo management.
+    * [ ] **Animation Integration (Combat):** Expand the Animation Blueprint with an 'Upper Body Slot' to allow for aiming and shooting animations to play while moving.
+    * [ ] **Target Dummy:** Create a simple AI target dummy that utilizes the `HealthComponent` to receive damage and be destroyed.
 
-- [ ] **Week 5: Game Loop & UI**
-  - [ ] Objectives, win/lose conditions.
-  - [ ] HUD, menus.
+### **Milestone 3: Advanced Player Traversal (Parkour)**
+
+* **Objective:** To give the player a rich, acrobatic moveset for navigating the environment.
+* **Tasks:**
+    * [ ] **Fall Roll System:** Implement a roll to negate or reduce fall damage based on landing velocity, driven by a `Root Motion` animation.
+    * [ ] **Obstacle Vaulting System:** Develop a system using line/sphere traces to detect and vault over low obstacles.
+    * [ ] **Ledge Climbing/Mantle System:** Implement logic for climbing up ledges.
+    * [ ] **Animation Integration (Parkour):** Expand the Animation Blueprint with new states, logic, and `Anim Notifies` to handle all new traversal animations.
+
+### **Milestone 4: AI Implementation (Enemies & Ally)**
+
+* **Objective:** To bring the non-player characters to life with distinct, appropriate AI architectures that drive their tactical and support behaviors.
+* **Tasks:**
+    * [ ] **Common Enemy AI:**
+        * Create a dedicated C++ child class inheriting from the `SltakerAICharacter` base.
+        * Configure a new `AIController` and a **Behavior Tree** to manage the AI's logic flow.
+        * Implement core behaviors using BT Tasks and Decorators: Patrolling predefined paths, detecting the player (sight and sound), and engaging in basic combat.
+        * Implement tactical repositioning logic: creating custom BT nodes for seeking cover when reloading or under suppressive fire.
+    * [ ] **Ally AI:**
+        * Create a dedicated C++ child class for the ally character.
+        * Implement foundational support behaviors (following the player, engaging shared targets) using a **Behavior Tree**.
+        * Develop a data-driven **Utility System** as a custom BT Service/Task to allow the ally to make intelligent decisions about when to perform support actions (heal player, provide ammo, or provide covering fire).
+
+### **Milestone 5: The "Acrobatic Stalker" (Boss AI)**
+
+* **Objective:** To build the signature "Boss" enemy, leveraging a high-performance, animation-driven architecture for complex and relentless pursuit.
+* **Tasks:**
+    * [ ] **Advanced Traversal Implementation (Player):** First, implement advanced parkour mechanics like wall running and wall jumping for the Player, establishing a functional system for the AI to use.
+    * [ ] **Boss AI Architecture:** Architect the Boss's core logic, states, and reactions using Unreal's modern **State Tree** system for maximum performance and fluid transitions between actions.
+    * [ ] **AI Parkour Navigation:** Implement custom State Tree Tasks that interface with Unreal's `NavLinkProxy` system, teaching the Boss AI to use all available parkour mechanics (vaulting, climbing, wall running) for aggressive and unpredictable pursuit.
+
+### **Milestone 6: Advanced Interaction & Game Loop**
+
+* **Objective:** To implement the final core mechanics and a basic UI, creating a complete gameplay loop.
+* **Tasks:**
+    * [ ] **Player "Downed" State:** Develop the mechanic where the player enters a downed state at zero health.
+    * [ ] **Ally Support Systems:** Implement the ally's ability to provide ammo, heal, and revive the player from the downed state, likely using a C++ `Interface`.
+    * [ ] **UI/HUD:** Create a basic user interface with UMG to display essential information (player health, ammo, ally status).
 
 ## Current Features
 
