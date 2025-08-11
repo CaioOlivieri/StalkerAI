@@ -55,7 +55,7 @@ This decision was not a step back, but a crucial step *forward*. It was a delibe
 * **Tasks:**
     * [x] **Project Setup:** Establish a stable C++ project, a clean development environment, and a professional version control workflow with Git & Git LFS.
     * [x] **Arena Blockout:** Create a functional level blockout to serve as a testbed for all gameplay mechanics, with a focus on verticality and traversal opportunities.
-    * [ ] **C++ Character Architecture:** Architect and create a shared C++ base class (`SltakerAICharacter`) for all characters and a dedicated child class for the player (`StalkerAIPlayerCharacter`).
+    * [x] **C++ Character Architecture:** Architect and create a shared C++ base class (`SltakerAICharacter`) for all characters and a dedicated child class for the player (`StalkerAIPlayerCharacter`).
     * [ ] **Player Controller Implementation:**
         * Implement camera controls (Spring Arm and Camera components) in the player's C++ class.
         * Configure basic locomotion (movement, running, jumping) via the **Enhanced Input System**.
